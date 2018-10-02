@@ -2,7 +2,7 @@ language: elixir
 elixir:
   - 1.7.3
 otp_release:
-  - 19.3
+  - 21.1
 addons:
   artifacts:
     debug: true
@@ -16,8 +16,7 @@ before_script:
   - export PATH=`pwd`/elixir/bin:$PATH
   - git clone https://github.com/jeremyjh/dialyxir.git
   - cd dialyxir
-  - MIX_ENV=prod mix do deps.get, compile, archive.build
-  - MIX_ENV=prod mix archive.install --force
+  - MIX_ENV=prod mix do deps.get, compile, archive.build, archive.install --force
   - cd ..
 
 script:
