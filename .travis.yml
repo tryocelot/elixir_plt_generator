@@ -16,7 +16,7 @@ before_script:
   - export PATH=`pwd`/elixir/bin:$PATH
   - git clone https://github.com/jeremyjh/dialyxir.git
   - cd dialyxir
-  - MIX_ENV=prod mix do compile, archive.build
+  - MIX_ENV=prod mix do deps.get, compile, archive.build
   - MIX_ENV=prod mix archive.install --force
   - cd ..
 
